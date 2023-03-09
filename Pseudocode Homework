@@ -1,0 +1,110 @@
+PROGRAM EmployeePayroll:
+
+START
+
+
+
+    DECLARE employeeName AS STRING
+
+    DECLARE count AS INTEGER
+
+    DECLARE basePay, commission, totalSales, boNus, weekly_Pay AS REAL
+
+
+
+    SET basePay = 800
+
+    ACCEPT basePay
+
+    
+
+    SET count = 5
+
+    ACCEPT count
+
+    
+
+    DISPLAY “Please enter the employee's name.”
+
+    ACCEPT employeeName
+
+
+
+    DISPLAY “Please enter the employee's total sales this week.”
+
+    ACCEPT totalSales 
+
+    
+
+    DISPLAY “Enter any incentive and bonus the employee has earned.”
+
+    ACCEPT boNus
+
+    
+
+    WHILE count >0 DO
+
+    
+
+        IF boNus < 5000 THEN
+
+            IF totalSales =< 10000 THEN
+
+                commission = totalSales * 0.10
+
+                ACCEPT commission
+
+            ELSE
+
+                commission = totalSales * 0.20
+
+                ACCEPT commission
+
+            ENDIF
+
+        ELSE 
+
+            IF totalSales < 25000 THEN
+
+                commission = totalSales * 0.15
+
+                ACCEPT commission
+
+            ELSE
+
+                commission = totalSales * 0.30
+
+                ACCEPT commission
+
+            ENDIF
+
+        ENDIF
+
+
+
+        weekly_pay = basePay + commission
+
+        ACCEPT weekly_pay
+
+        
+
+        DISPLAY "The weekly payroll for", employeeName " is ", weekly_pay
+
+        DISPLAY "The employee earned incentive bonus of ", boNus " and commission of ", commission
+
+        
+
+        count = count - 1
+
+        ACCEPT count
+
+        
+
+    ENDWHILE
+
+    
+
+    DISPLAY "Thank you and goodbye"
+
+END
+
